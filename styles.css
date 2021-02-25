@@ -39,9 +39,11 @@ h1 div.blue {
 }
 
 main {
+    align-items: flex-start;
     display: flex;
     flex-direction: row;
     left: 0;
+    overflow-y: hidden;
     position: relative;
     transition: left 0.5s;
     width: 300vw;

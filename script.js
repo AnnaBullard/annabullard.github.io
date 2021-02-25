@@ -4,11 +4,13 @@ window.addEventListener("DOMContentLoaded", ()=>{
     let navbar = document.querySelector("#navbar");
     let main = document.querySelector("main");
 
-    console.log(navbar)
     navbar.addEventListener("click", (e) => {
         if (e.target.classList.contains("nav-link")) {
             let className = e.target.id;
             main.setAttribute("class", className);
+            let activePage = document.querySelector(`.page.${className}`)
+            let h = activePage.offsetHeight;
+            main.setAttribute("style", `height:${h}px;`);
         }
     })
 
@@ -35,4 +37,8 @@ window.addEventListener("DOMContentLoaded", ()=>{
         } 
         parent.appendChild(listItem);
     }
+
+    let homePage = document.querySelector(`.page.home`)
+    let height = homePage.offsetHeight;
+    main.setAttribute("style", `height:${height}px;`);
 })
