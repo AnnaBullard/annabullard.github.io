@@ -31,6 +31,24 @@ h1 div:last-child {
     font-weight: 200;
     text-transform: uppercase;
 }
+main {
+    display: flex;
+    flex-direction: row;
+    left: 0;
+    position: relative;
+    width: 300vw;
+    transition: left 0.5s;
+}
+
+main.skills{
+    left: -100vw;
+    transition: left 0.5s;
+}
+
+main.projects{
+    left: -200vw;
+    transition: left 0.5s;
+}
 
 .page {
     box-sizing: border-box;
@@ -39,6 +57,10 @@ h1 div:last-child {
 
 .nav-title {
     font-size: 20px;
+}
+
+.nav-list {
+    list-style: none;
 }
 
 .keyword {
