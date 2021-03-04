@@ -1,7 +1,7 @@
 window.addEventListener("DOMContentLoaded", ()=>{
     
     //NAVIGATION
-    let navbar = document.querySelector("#navbar");
+    let navbar = document.querySelector("ul.navbar");
     let main = document.querySelector("main");
 
     navbar.addEventListener("click", (e) => {
@@ -10,7 +10,7 @@ window.addEventListener("DOMContentLoaded", ()=>{
             main.setAttribute("class", className);
             let activePage = document.querySelector(`.page.${className}`)
             let h = activePage.offsetHeight;
-            main.setAttribute("style", `height:${h}px;`);
+            main.setAttribute("style", `height:${h+100}px;`);
         }
     })
 
@@ -40,5 +40,5 @@ window.addEventListener("DOMContentLoaded", ()=>{
 
     let homePage = document.querySelector(`.page.home`)
     let height = homePage.offsetHeight;
-    main.setAttribute("style", `height:${height}px;`);
+    main.setAttribute("style", `height:${height+100}px;`);
 })
