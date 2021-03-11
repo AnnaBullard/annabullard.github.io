@@ -3,6 +3,7 @@ window.addEventListener("DOMContentLoaded", ()=>{
     //NAVIGATION
     let navbar = document.querySelector("ul.navbar");
     let main = document.querySelector("main");
+    let minheight = window.innerHeight-118;
 
     navbar.addEventListener("click", (e) => {
         if (e.target.classList.contains("nav-link")) {
@@ -10,8 +11,12 @@ window.addEventListener("DOMContentLoaded", ()=>{
             main.setAttribute("class", className);
             let activePage = document.querySelector(`.page.${className}`)
             let h = activePage.offsetHeight;
-            main.setAttribute("style", `height:${h+100}px;`);
+            main.setAttribute("style", `height:${h+100}px; min-height: ${minheight}px`);
         }
+    })
+
+    window.addEventListener("resize", (e) => {
+        minheight = window.innerHeight-118;
     })
 
     //HOMEPAGE
@@ -40,5 +45,5 @@ window.addEventListener("DOMContentLoaded", ()=>{
 
     let homePage = document.querySelector(`.page.home`)
     let height = homePage.offsetHeight;
-    main.setAttribute("style", `height:${height+100}px;`);
+    main.setAttribute("style", `height:${height+100}px; min-height: ${minheight}px;`);
 })

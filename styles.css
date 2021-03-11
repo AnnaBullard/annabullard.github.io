@@ -6,6 +6,8 @@ body {
     font-family: 'Assistant', 'Poppins', sans-serif;
     overflow-x: hidden;
     position: relative;
+    padding: 0;
+    margin: 0;
 }
 
 h1 {
@@ -14,8 +16,16 @@ h1 {
     line-height: 70px;
 }
 
-h1 div.blue {
+ul {
+    padding-right: 10px;
+}
+
+.blue, .blue a {
     color: #3c9aba;
+}
+
+.blue a:hover {
+    color: #ccccc5;
 }
 
 .navbar {
@@ -25,6 +35,7 @@ h1 div.blue {
     justify-content: center;
     list-style: none;
     margin: 0;
+    padding: 0;
     width: 100%;
 }
 
@@ -43,15 +54,16 @@ ul.navbar li:hover{
 footer {
     bottom: 0;
     box-sizing: border-box;
-    height: 60px;
+    height: 72px;
     padding: 10px 0;
-    position:absolute;
     width: 100%;
 }
 
 .navbar li a {
     color: #ccccc5;
     font-size: 40px;
+    text-decoration: none;
+    text-transform: none;
 }
 
 .navbar li:hover a {
@@ -66,7 +78,7 @@ main {
     overflow-y: hidden;
     position: relative;
     transition: left 0.5s;
-    width: 300vw;
+    width: 500vw;
 }
 
 main.skills{
@@ -76,6 +88,16 @@ main.skills{
 
 main.projects{
     left: -200vw;
+    transition: left 0.5s;
+}
+
+main.resume{
+    left: -300vw;
+    transition: left 0.5s;
+}
+
+main.contacts{
+    left: -400vw;
     transition: left 0.5s;
 }
 
@@ -193,6 +215,31 @@ div.projects > div {
 
 .image-block:hover .image-links a:hover{
     color: #ffffff;
+}
+
+.resume ul li span {
+    display:block;
+}
+
+.resume ul li span:nth-child(2) {
+    font-style: italic;
+}
+
+div.contacts > div {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+div.contacts > div a {
+    color: #fff;
+    font-size: 30px;
+    text-decoration: none;
+}
+
+div.contacts > div a:hover {
+    color: #3c9aba
 }
 
 @media screen and (max-width: 520px) {
