@@ -71,7 +71,7 @@ footer {
     color: #3c9aba;
 }
 
-.navbar i {
+.nav-link i {
     display: none;
 }
 
@@ -281,10 +281,10 @@ div.contacts > div a:hover {
         box-sizing: border-box;
         grid-template-columns: repeat(3, 1fr);
     }
-    .navbar i {
+    .nav-link i {
         display: inline-block;
     }
-    .navbar span {
+    .nav-link span {
         display: none;
     }
 }
