@@ -19,6 +19,10 @@ window.addEventListener("DOMContentLoaded", ()=>{
 
     window.addEventListener("resize", (e) => {
         minheight = window.innerHeight-118;
+        let className = main.getAttribute("class");
+        let activePage = document.querySelector(`.page.${className}`)
+        let h = activePage.offsetHeight;
+        main.setAttribute("style", `height:${h+100}px; min-height: ${minheight}px`);
     })
 
     //HOMEPAGE

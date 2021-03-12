@@ -75,12 +75,18 @@ footer {
     display: none;
 }
 
+
+/*VERSION 1*/
+.main-wrapper {
+    width:100vw;
+    overflow-x: hidden;
+}
+
 main {
     align-items: flex-start;
     display: flex;
     flex-direction: row;
     left: 0;
-    overflow-y: hidden;
     position: relative;
     transition: left 0.5s;
     width: 500vw;
@@ -101,7 +107,7 @@ main.resume{
     transition: left 0.5s;
 }
 
-main.contacts{
+main.contact{
     left: -400vw;
     transition: left 0.5s;
 }
@@ -111,6 +117,39 @@ main.contacts{
     padding: 0 10px;  
     width: 100vw;
 }
+/*END OF VERSION 1*/
+
+/*VERSION 2*/
+/* 
+main {
+    align-items: flex-start;
+    display: flex;
+    flex-direction: row;
+    left: 0;
+    overflow-x: hidden;
+    position: relative;
+    transition: left 0.5s;
+    width: 100vw;
+}
+
+.home .home,
+.skills .skills,
+.projects .projects,
+.resume .resume,
+.contact .contact
+ {
+    display:block;
+    left: 0;
+    transition: left 0.5s;
+}
+
+.page {
+    box-sizing: border-box;
+    display:none;
+    padding: 0 10px;  
+    width: 100vw;
+} */
+/*END OF VERSION 2*/
 
 .nav-title {
     font-size: 20px;
@@ -139,7 +178,7 @@ main.contacts{
     padding-left: 260px;
 }
 
-.home img {
+.page.home img {
     border-radius: 50%;
     height:250px;
     left: 0;
@@ -246,20 +285,20 @@ div.projects > div {
     font-style: italic;
 }
 
-div.contacts > div {
+div.contact > div {
     align-items: center;
     display: flex;
     flex-direction: column;
     justify-content: center;
 }
 
-div.contacts > div a {
+div.contact > div a {
     color: #fff;
     font-size: 30px;
     text-decoration: none;
 }
 
-div.contacts > div a:hover {
+div.contact > div a:hover {
     color: #3c9aba
 }
 @media screen and (max-width: 660px) {
@@ -271,6 +310,7 @@ div.contacts > div a:hover {
 @media screen and (max-width: 520px) {
     .page {
         padding: 0;
+        overflow-x: auto;
     }
 
     .page.projects > div {
@@ -281,10 +321,31 @@ div.contacts > div a:hover {
         box-sizing: border-box;
         grid-template-columns: repeat(3, 1fr);
     }
+
     .nav-link i {
         display: inline-block;
     }
+
     .nav-link span {
         display: none;
+    }
+
+    h1 {
+        font-size: 10vw;
+    }
+}
+
+@media screen and (max-width: 350px) {
+    .page.skills > div {
+        box-sizing: border-box;
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    div.contact > div a {
+        font-size: 6vw;
+    }
+
+    div.contact > div span {
+        text-align: center;
     }
 }
