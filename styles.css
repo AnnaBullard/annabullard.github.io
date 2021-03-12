@@ -35,8 +35,9 @@ ul {
     justify-content: center;
     list-style: none;
     margin: 0;
+    overflow-x: auto;
     padding: 0;
-    width: 100%;
+    width: 100vw;
 }
 
 .navbar li {
@@ -68,6 +69,10 @@ footer {
 
 .navbar li:hover a {
     color: #3c9aba;
+}
+
+.navbar i {
+    display: none;
 }
 
 main {
@@ -126,6 +131,22 @@ main.contacts{
 .string {
     color: #ce9178;
 
+}
+
+.home h1 {
+    height: 250px;
+    position: relative;
+    padding-left: 260px;
+}
+
+.home img {
+    border-radius: 50%;
+    height:250px;
+    left: 0;
+    object-fit: cover;
+    position: absolute;
+    top: 0;
+    width:250px;
 }
 
 .skills i,
@@ -241,7 +262,12 @@ div.contacts > div a {
 div.contacts > div a:hover {
     color: #3c9aba
 }
-
+@media screen and (max-width: 660px) {
+    .home h1 {
+        padding-left: 10px;
+        padding-top: 260px;
+    }
+}
 @media screen and (max-width: 520px) {
     .page {
         padding: 0;
@@ -254,5 +280,11 @@ div.contacts > div a:hover {
     .page.skills > div {
         box-sizing: border-box;
         grid-template-columns: repeat(3, 1fr);
+    }
+    .navbar i {
+        display: inline-block;
+    }
+    .navbar span {
+        display: none;
     }
 }

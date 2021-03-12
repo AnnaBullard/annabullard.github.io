@@ -1,19 +1,21 @@
 window.addEventListener("DOMContentLoaded", ()=>{
     
     //NAVIGATION
-    let navbar = document.querySelector("ul.navbar");
+    let navbar = document.querySelectorAll(".nav-link");
     let main = document.querySelector("main");
     let minheight = window.innerHeight-118;
 
-    navbar.addEventListener("click", (e) => {
-        if (e.target.classList.contains("nav-link")) {
-            let className = e.target.id;
-            main.setAttribute("class", className);
-            let activePage = document.querySelector(`.page.${className}`)
-            let h = activePage.offsetHeight;
-            main.setAttribute("style", `height:${h+100}px; min-height: ${minheight}px`);
-        }
-    })
+    function changePage(e) {
+        let className = e.currentTarget.id;
+        main.setAttribute("class", className);
+        let activePage = document.querySelector(`.page.${className}`)
+        let h = activePage.offsetHeight;
+        main.setAttribute("style", `height:${h+100}px; min-height: ${minheight}px`);
+    }
+    
+    for(let elem of navbar) {
+        elem.addEventListener("click", changePage, true);
+    }
 
     window.addEventListener("resize", (e) => {
         minheight = window.innerHeight-118;
